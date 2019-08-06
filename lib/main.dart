@@ -3,6 +3,7 @@ import 'package:flutter_app/htmlText/flutter_html_textview.dart';
 import 'package:flutter_app/test/drag.dart';
 import 'package:flutter_app/test/sliver_view.dart';
 import 'package:flutter_app/test/state_life.dart';
+import 'package:flutter_app/test/theme.dart';
 import 'package:oktoast/src/toast.dart';
 
 void main() => runApp(MyApp());
@@ -54,15 +55,17 @@ class SingleChildScrollViewTestRoute extends StatelessWidget {
               Text('sdfsdf'),
               Text('sdfsdf'),
               Text('sdfsdf'),
-              MaterialButton(child: Text('拖动'),
-              color: Colors.blue,
-              textColor: Colors.white,
-              onPressed: (){
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (BuildContext c) => DragTest()));
-              },),
+              MaterialButton(
+                child: Text('拖动'),
+                color: Colors.blue,
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext c) => DragTest()));
+                },
+              ),
               InkWell(
                 child: Text('图片缩放'),
                 onTap: () {
@@ -85,21 +88,31 @@ class SingleChildScrollViewTestRoute extends StatelessWidget {
               InkWell(
                 child: Text('生命周期'),
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext c) =>
-                              Life()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (BuildContext c) => Life()));
                 },
               ),
               InkWell(
                 child: Text('SliverView'),
+                highlightColor: Colors.blue,
+                splashColor: Colors.grey,
+                hoverColor: Colors.teal,
                 onTap: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (BuildContext c) =>
-                              SliverView()));
+                          builder: (BuildContext c) => SliverView()));
+                },
+              ),
+              MaterialButton(
+                child: Text('主题'),
+                color: Colors.blue,
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext c) => ThemeTestRoute()));
                 },
               ),
               Container(
