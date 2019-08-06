@@ -4,7 +4,7 @@ import 'package:flutter_app/test/drag.dart';
 import 'package:flutter_app/test/sliver_view.dart';
 import 'package:flutter_app/test/state_life.dart';
 import 'package:flutter_app/test/theme.dart';
-import 'package:oktoast/src/toast.dart';
+import 'package:oktoast/oktoast.dart';
 
 void main() => runApp(MyApp());
 

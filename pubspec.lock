@@ -49,14 +49,14 @@ packages:
       name: crypto
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.6"
+    version: "2.1.1"
   csslib:
     dependency: transitive
     description:
       name: csslib
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.15.0"
+    version: "0.16.1"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -87,14 +87,14 @@ packages:
       name: html
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.13.4+2"
+    version: "0.14.0+2"
   http:
     dependency: transitive
     description:
       name: http
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.11.3+17"
+    version: "0.12.0+2"
   http_parser:
     dependency: transitive
     description:
@@ -122,7 +122,7 @@ packages:
       name: oktoast
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.1.7"
+    version: "2.2.0"
   path:
     dependency: transitive
     description:
@@ -136,7 +136,7 @@ packages:
       name: path_provider
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.5.0+1"
+    version: "1.2.0"
   pedantic:
     dependency: transitive
     description:
@@ -169,7 +169,7 @@ packages:
       name: sqflite
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.1.5"
+    version: "1.1.6+3"
   stack_trace:
     dependency: transitive
     description:
@@ -197,7 +197,7 @@ packages:
       name: synchronized
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.1.0"
+    version: "2.1.0+1"
   term_glyph:
     dependency: transitive
     description:
@@ -219,20 +219,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.1.6"
-  utf:
-    dependency: transitive
-    description:
-      name: utf
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.9.0+5"
   uuid:
     dependency: transitive
     description:
       name: uuid
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
   vector_math:
     dependency: transitive
     description:
