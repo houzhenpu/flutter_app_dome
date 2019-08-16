@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/htmlText/flutter_html_textview.dart';
 import 'package:flutter_app/test/dialog.dart';
 import 'package:flutter_app/test/drag.dart';
+import 'package:flutter_app/test/event.dart';
 import 'package:flutter_app/test/sliver_view.dart';
 import 'package:flutter_app/test/state_life.dart';
 import 'package:flutter_app/test/theme.dart';
@@ -116,17 +117,28 @@ class SingleChildScrollViewTestRoute extends StatelessWidget {
                           builder: (BuildContext c) => ThemeTestRoute()));
                 },
               ),
-          MaterialButton(
-            child: Text('DialogShow'),
-            color: Colors.blue,
-            textColor: Colors.white,
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext c) => DialogShowDome()));
-            },
-          ),
+              MaterialButton(
+                child: Text('DialogShow'),
+                color: Colors.blue,
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext c) => DialogShowDome()));
+                },
+              ),
+              MaterialButton(
+                child: Text('EventDome'),
+                color: Colors.blue,
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext c) => EventDome()));
+                },
+              ),
               Container(
                 child: new HtmlTextView(
                   data: html,

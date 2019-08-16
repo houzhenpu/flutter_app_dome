@@ -441,7 +441,6 @@ class HtmlParser {
       for (Match match in matches) {
         param = match[1].trim();
         value = match[2].trim();
-        print('param--->${param}--->${value}');
         switch (param) {
           case 'color':
             if (this._color.hasMatch(value)) {

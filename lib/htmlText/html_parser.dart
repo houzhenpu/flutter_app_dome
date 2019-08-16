@@ -30,7 +30,6 @@ class HtmlParser {
 
     List<dom.Element> docBodyChildren = docBody.children;
     docBodyChildren.forEach((e) {
-      print('e.outerHtml--->${e.outerHtml}');
       if (e.outerHtml.contains("<img")) {
         var imgElements = e.getElementsByTagName("img");
         if (imgElements.length > 0) {

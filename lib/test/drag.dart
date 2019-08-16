@@ -31,7 +31,7 @@ class _DragTestState extends State<DragTest>
               print("用户手指按下：${e.globalPosition}");
             },
             //手指滑动时会触发此回调
-            onPanUpdate: (DragUpdateDetails e) {
+            onPanUpdate: (e) {
               //用户手指滑动时，更新偏移，重新构建
               setState(() {
                 _left += e.delta.dx;
