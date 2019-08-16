@@ -6,6 +6,7 @@ import 'package:flutter_app/test/event.dart';
 import 'package:flutter_app/test/sliver_view.dart';
 import 'package:flutter_app/test/state_life.dart';
 import 'package:flutter_app/test/theme.dart';
+import 'package:flutter_app/video/video_dome.dart';
 import 'package:oktoast/oktoast.dart';
 
 void main() => runApp(MyApp());
@@ -137,6 +138,17 @@ class SingleChildScrollViewTestRoute extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (BuildContext c) => EventDome()));
+                },
+              ),
+              MaterialButton(
+                child: Text('VideoPlayer'),
+                color: Colors.blue,
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext c) => VideoPlayer()));
                 },
               ),
               Container(
