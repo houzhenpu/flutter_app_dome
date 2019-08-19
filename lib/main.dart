@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/htmlText/flutter_html_textview.dart';
+import 'package:flutter_app/test/data_transfer.dart';
 import 'package:flutter_app/test/dialog.dart';
 import 'package:flutter_app/test/drag.dart';
 import 'package:flutter_app/test/event.dart';
@@ -151,6 +152,17 @@ class SingleChildScrollViewTestRoute extends StatelessWidget {
                           builder: (BuildContext c) => VideoPlayer()));
                 },
               ),
+          MaterialButton(
+            child: Text('DataTransfer 跨组建数据传递'),
+            color: Colors.blue,
+            textColor: Colors.white,
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext c) => DataTransfer()));
+            },
+          ),
               Container(
                 child: new HtmlTextView(
                   data: html,

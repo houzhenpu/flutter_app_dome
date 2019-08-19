@@ -27,6 +27,7 @@ dependencies:
   cached_network_image: ^1.1.1
   html: any
   fijkplayer: ^0.0.7
+  event_bus: 1.1.0
 
 
 dev_dependencies:
