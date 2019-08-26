@@ -22,10 +22,8 @@ class EventDome extends StatelessWidget {
         onPointerMove: (event) => print("move $event"), // 手势移动回调
         onPointerUp: (event) {
           print("up $event");
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (BuildContext c) => GestureDetectorDome()));
+          Navigator.of(context).pop("test");
+          Navigator.maybePop(context, 'tesxxxxxt');
         }, // 手势抬起回调
       ),
     );
@@ -107,8 +105,7 @@ class CustomGestureDetectorState extends State<CustomGestureDetectorDome> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (BuildContext c) =>
-                          MultipleTapGesture()));
+                      builder: (BuildContext c) => MultipleTapGesture()));
             }, // 子视图的点击回调
             child: Container(
               color: Colors.blueAccent,

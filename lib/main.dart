@@ -1,9 +1,12 @@
+import 'dart:isolate';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_app/htmlText/flutter_html_textview.dart';
 import 'package:flutter_app/test/data_transfer.dart';
 import 'package:flutter_app/test/dialog.dart';
 import 'package:flutter_app/test/drag.dart';
 import 'package:flutter_app/test/event.dart';
+import 'package:flutter_app/test/http_dome.dart';
 import 'package:flutter_app/test/sliver_view.dart';
 import 'package:flutter_app/test/state_life.dart';
 import 'package:flutter_app/test/theme.dart';
@@ -15,6 +18,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    start();
     return OKToast(
       textStyle: TextStyle(fontSize: 16.0, color: Colors.white),
       backgroundColor: Colors.grey..withAlpha(200),
@@ -25,6 +29,29 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+Isolate isolate;
+
+start() async {
+  Future(() => print('f1'))
+      .then((_) async => await Future(() => print('f2')))
+      .then((_) => print('f3'));
+  Future(() async => await Future(() => print('f4')));
+
+  ReceivePort receivePort = ReceivePort(); // 创建管道
+  // 创建并发 Isolate，并传入发送管道
+  isolate = await Isolate.spawn(getMsg, receivePort.sendPort);
+  // 监听管道消息
+  receivePort.listen((data) {
+    print('Data：$data');
+    receivePort.close(); // 关闭管道
+    isolate?.kill(priority: Isolate.immediate); // 杀死并发 Isolate
+    isolate = null;
+  });
+}
+
+// 并发 Isolate 往管道发送一个字符串
+getMsg(sendPort) => sendPort.send("Hello  ReceivePort");
 
 // ignore: must_be_immutable
 class SingleChildScrollViewTestRoute extends StatelessWidget {
@@ -136,9 +163,12 @@ class SingleChildScrollViewTestRoute extends StatelessWidget {
                 textColor: Colors.white,
                 onPressed: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext c) => EventDome()));
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext c) => EventDome()))
+                      .then((value) {
+                    print('value**********************$value');
+                  });
                 },
               ),
               MaterialButton(
@@ -152,17 +182,33 @@ class SingleChildScrollViewTestRoute extends StatelessWidget {
                           builder: (BuildContext c) => VideoPlayer()));
                 },
               ),
-          MaterialButton(
-            child: Text('DataTransfer 跨组建数据传递'),
-            color: Colors.blue,
-            textColor: Colors.white,
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext c) => DataTransfer()));
-            },
-          ),
+              MaterialButton(
+                child: Text('DataTransfer 跨组建数据传递'),
+                color: Colors.blue,
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext c) => DataTransfer()))
+                      .then((value) {
+                    print('value**********************$value');
+                  });
+                },
+              ),
+              MaterialButton(
+                child: Text('HttpDome'),
+                color: Colors.blue,
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext c) => HttpDome()))
+                      .then((value) {
+                  });
+                },
+              ),
               Container(
                 child: new HtmlTextView(
                   data: html,

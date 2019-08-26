@@ -28,6 +28,8 @@ dependencies:
   html: any
   fijkplayer: ^0.0.7
   event_bus: 1.1.0
+  http: '>=0.11.3+12'
+  dio: '>2.1.3'
 
 
 dev_dependencies:
