@@ -6,11 +6,13 @@ import 'package:flutter_app/test/data_transfer.dart';
 import 'package:flutter_app/test/dialog.dart';
 import 'package:flutter_app/test/drag.dart';
 import 'package:flutter_app/test/event.dart';
+import 'package:flutter_app/test/font_test.dart';
 import 'package:flutter_app/test/http_dome.dart';
 import 'package:flutter_app/test/sliver_view.dart';
 import 'package:flutter_app/test/state_life.dart';
 import 'package:flutter_app/test/theme.dart';
 import 'package:flutter_app/video/video_dome.dart';
+import 'package:flutter_app/video/video_player_dome.dart';
 import 'package:oktoast/oktoast.dart';
 
 void main() => runApp(MyApp());
@@ -183,6 +185,17 @@ class SingleChildScrollViewTestRoute extends StatelessWidget {
                 },
               ),
               MaterialButton(
+                child: Text('ShowVideo'),
+                color: Colors.blue,
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext c) => VideoApp()));
+                },
+              ),
+              MaterialButton(
                 child: Text('DataTransfer 跨组建数据传递'),
                 color: Colors.blue,
                 textColor: Colors.white,
@@ -205,6 +218,19 @@ class SingleChildScrollViewTestRoute extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (BuildContext c) => HttpDome()))
+                      .then((value) {
+                  });
+                },
+              ),
+              MaterialButton(
+                child: Text('FontTest'),
+                color: Colors.blue,
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext c) => FontTest()))
                       .then((value) {
                   });
                 },
