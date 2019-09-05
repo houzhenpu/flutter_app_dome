@@ -15,6 +15,8 @@ import 'package:flutter_app/video/video_dome.dart';
 import 'package:flutter_app/video/video_player_dome.dart';
 import 'package:oktoast/oktoast.dart';
 
+import 'provider_dome/provider_main.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -231,6 +233,19 @@ class SingleChildScrollViewTestRoute extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (BuildContext c) => FontTest()))
+                      .then((value) {
+                  });
+                },
+              ),
+              MaterialButton(
+                child: Text('ProviderMain'),
+                color: Colors.blue,
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext c) => ProviderMain()))
                       .then((value) {
                   });
                 },
