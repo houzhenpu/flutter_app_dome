@@ -37,19 +37,17 @@ class _ThemeTestRouteState extends State<ThemeTestRoute> {
                   children: <Widget>[
                     Icon(Icons.favorite),
                     Icon(Icons.airport_shuttle),
-                    Text("  颜色固定黑色", style: Theme
-                        .of(context)
-                        .textTheme
-                        .body1,)
+                    Text(
+                      "  颜色固定黑色",
+                      style: Theme.of(context).textTheme.body1,
+                    )
                   ]),
             ),
           ],
         ),
         floatingActionButton: FloatingActionButton(
-            onPressed: () =>
-                setState(() =>
-                theme = theme == kIOSTheme ? kAndroidTheme : kIOSTheme
-                ),
+            onPressed: () => setState(
+                () => theme = theme == kIOSTheme ? kAndroidTheme : kIOSTheme),
             child: Icon(Icons.palette)),
       ),
     );
@@ -67,7 +65,7 @@ final ThemeData kIOSTheme = ThemeData(
     iconTheme: IconThemeData(color: Colors.grey),
     //icon 主题为灰色
     textTheme: TextTheme(body1: TextStyle(color: Colors.black)) // 文本主题为黑色
-);
+    );
 // Android 深色主题
 final ThemeData kAndroidTheme = ThemeData(
     brightness: Brightness.dark,
@@ -79,4 +77,24 @@ final ThemeData kAndroidTheme = ThemeData(
     iconTheme: IconThemeData(color: Colors.blue),
     //icon 主题色为蓝色
     textTheme: TextTheme(body1: TextStyle(color: Colors.red)) // 文本主题色为红色
-);
+    );
+
+class StatefulW extends StatefulWidget {
+  String text = '';
+
+  StatefulW(this.text, {Key key}) : super(key: key);
+
+  @override
+  _StatefulWState createState() => _StatefulWState();
+}
+
+class _StatefulWState extends State<StatefulW> {
+  String sText = '';
+
+  _StatefulWState() {}
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(widget.text);
+  }
+}

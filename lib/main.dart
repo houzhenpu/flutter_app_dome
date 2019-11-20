@@ -3,12 +3,14 @@ import 'dart:isolate';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/htmlText/flutter_html_textview.dart';
 import 'package:flutter_app/test/data_transfer.dart';
+import 'package:flutter_app/test/demo_canvas.dart';
 import 'package:flutter_app/test/dialog.dart';
 import 'package:flutter_app/test/drag.dart';
 import 'package:flutter_app/test/event.dart';
 import 'package:flutter_app/test/font_test.dart';
 import 'package:flutter_app/test/http_dome.dart';
 import 'package:flutter_app/test/sliver_view.dart';
+import 'package:flutter_app/test/spinkit.dart';
 import 'package:flutter_app/test/state_life.dart';
 import 'package:flutter_app/test/theme.dart';
 import 'package:flutter_app/video/video_dome.dart';
@@ -217,11 +219,10 @@ class SingleChildScrollViewTestRoute extends StatelessWidget {
                 textColor: Colors.white,
                 onPressed: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext c) => HttpDome()))
-                      .then((value) {
-                  });
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext c) => HttpDome()))
+                      .then((value) {});
                 },
               ),
               MaterialButton(
@@ -230,11 +231,10 @@ class SingleChildScrollViewTestRoute extends StatelessWidget {
                 textColor: Colors.white,
                 onPressed: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext c) => FontTest()))
-                      .then((value) {
-                  });
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext c) => FontTest()))
+                      .then((value) {});
                 },
               ),
               MaterialButton(
@@ -243,13 +243,41 @@ class SingleChildScrollViewTestRoute extends StatelessWidget {
                 textColor: Colors.white,
                 onPressed: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext c) => ProviderMain()))
-                      .then((value) {
-                  });
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext c) => ProviderMain()))
+                      .then((value) {});
                 },
               ),
+              //DemoCanvas
+              MaterialButton(
+                child: Text('DemoCanvas 虚线绘制'),
+                color: Colors.blue,
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext c) => DemoCanvas()))
+                      .then((value) {});
+                },
+              ),
+              MaterialButton(
+                child: Text('进度条'),
+                color: Colors.blue,
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext c) => Spinkit()))
+                      .then((value) {});
+                },
+              ),
+
+              StatefulW("text1"),
+              StatefulW("text2"),
+              StatefulW("text3"),
               Container(
                 child: new HtmlTextView(
                   data: html,
@@ -288,6 +316,19 @@ class SingleChildScrollViewTestRoute extends StatelessWidget {
               Container(
                 child: new HtmlTextView(
                   data: emStrong1,
+                ),
+              ),
+              TextField(
+                maxLines: 5,
+                autofocus: true,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                ),
+                decoration: InputDecoration(
+                  hintText: "我来说两句",
+                  contentPadding: EdgeInsets.all(8),
+                  border: InputBorder.none, //隐藏下划线
                 ),
               ),
             ],

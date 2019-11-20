@@ -25,9 +25,14 @@ class LifeState extends State<Life> {
     print('didChangeDependencies()---->');
   }
 
+  String name = '测试';
   @override
   Widget build(BuildContext context) {
     print('build()---->');
+
+    setState(() {
+
+    });
 
     return Container(
       width: 300,
