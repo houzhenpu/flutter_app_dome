@@ -176,7 +176,7 @@ class SingleChildScrollViewTestRoute extends StatelessWidget {
                 },
               ),
               MaterialButton(
-                child: Text('VideoPlayer'),
+                child: Text('VideoPlayerTest'),
                 color: Colors.blue,
                 textColor: Colors.white,
                 onPressed: () {
