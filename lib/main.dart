@@ -164,7 +164,7 @@ class SingleChildScrollViewTestRoute extends StatelessWidget {
                 },
               ),
               MaterialButton(
-                child: Text('EventDome'),
+                child: Text('EventDomeMaster'),
                 color: Colors.blue,
                 textColor: Colors.white,
                 onPressed: () {
