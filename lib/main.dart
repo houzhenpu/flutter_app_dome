@@ -172,8 +172,7 @@ class SingleChildScrollViewTestRoute extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (BuildContext c) => EventDome()))
-                      .then((value) {
-                  });
+                      .then((value) {});
                 },
               ),
               MaterialButton(
@@ -207,9 +206,7 @@ class SingleChildScrollViewTestRoute extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (BuildContext c) => DataTransfer()))
-                      .then((value) {
-                    print('value**********************$value');
-                  });
+                      .then((value) {});
                 },
               ),
               MaterialButton(
