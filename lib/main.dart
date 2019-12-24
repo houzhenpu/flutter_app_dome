@@ -12,6 +12,7 @@ import 'package:flutter_app/test/http_dome.dart';
 import 'package:flutter_app/test/sliver_view.dart';
 import 'package:flutter_app/test/spinkit.dart';
 import 'package:flutter_app/test/state_life.dart';
+import 'package:flutter_app/test/test_list.dart';
 import 'package:flutter_app/test/theme.dart';
 import 'package:flutter_app/video/video_dome.dart';
 import 'package:flutter_app/video/video_player_dome.dart';
@@ -267,6 +268,19 @@ class SingleChildScrollViewTestRoute extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (BuildContext c) => Spinkit()))
+                      .then((value) {});
+                },
+              ),
+
+              MaterialButton(
+                child: Text('进度条'),
+                color: Colors.blue,
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext c) => TestList()))
                       .then((value) {});
                 },
               ),
