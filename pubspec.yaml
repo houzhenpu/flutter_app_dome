@@ -24,7 +24,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   oktoast: ^2.2.0
-  cached_network_image: ^1.1.1
+  cached_network_image: ^2.0.0
   html: any
   fijkplayer: ^0.0.7
   video_player: ^0.10.0+2
